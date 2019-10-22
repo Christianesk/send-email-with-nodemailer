@@ -1,0 +1,16 @@
+{
+  "name": "mail-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.3.0",
+    "nodemon": "^1.19.3"
+  }
+}
