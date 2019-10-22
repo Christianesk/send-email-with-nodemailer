@@ -11,19 +11,20 @@ router.post('/send-email', async (req, res) => {
     <h1>User Information</h1>
     <ul>
         <li>Username: ${name}</li>
-        <li>User Email: ${email}</li>
-        <li>User phone: ${phone}</li>
+        <li>Email: ${email}</li>
+        <li>Phone: ${phone}</li>
     </ul>
     <p>${message}</p>
     `;
 
     const transporter = nodemailer.createTransport({
-        host: 'mail.sptsoporte.com',
+        host: 'mail.example.com',
+        name: 'example.com',
         port: 587,
         secure: false,
         auth: {
-            user: 'info@sptsoporte.com',
-            pass: 'prueba123'
+            user: 'info@example.com',
+            pass: 'example123'
         },
         tls: {
             rejectUnauthorized: false
@@ -31,10 +32,10 @@ router.post('/send-email', async (req, res) => {
     });
 
     const info = await transporter.sendMail({
-        from: '"Martial App" <info@sptsoporte.com>',
-        to: 'christian.91.gm@hotmail.com',
-        subject: 'Martial App Information',
-        text: 'Hello Word'
+        from: '"Example App" <info@example.com>',
+        to: email,
+        subject: 'Example App Information',
+        html: contentHTML
     });
 
     console.log(info);
