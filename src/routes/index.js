@@ -18,11 +18,11 @@ router.post('/send-email', async (req, res) => {
     `;
 
     const transporter = nodemailer.createTransport({
-        host: 'mail.example.com',
+        host: 'mail.sptsoporte.com',
         port: 587,
         secure: false,
         auth: {
-            user: 'info@example.com',
+            user: 'info@sptsoporte.com',
             pass: 'prueba123'
         },
         tls: {
@@ -31,9 +31,9 @@ router.post('/send-email', async (req, res) => {
     });
 
     const info = await transporter.sendMail({
-        from: '"Example" <info@example.com>',
-        to: 'example@hotmail.com',
-        subject: 'Example Information',
+        from: '"Martial App" <info@sptsoporte.com>',
+        to: 'christian.91.gm@hotmail.com',
+        subject: 'Martial App Information',
         text: 'Hello Word'
     });
 
