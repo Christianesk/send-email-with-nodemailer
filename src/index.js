@@ -11,7 +11,7 @@ app.use(Routes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.set('port',process.env.PORT || 3000);
 
 
 app.listen(3000, () => {
